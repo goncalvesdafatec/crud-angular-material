@@ -1,0 +1,45 @@
+.full-width {
+width: 100%;
+}
+
+.mt-20 {
+margin-top: 20px;
+}
+
+.mt-60 {
+margin-top: 60px;
+}
+
+mat-card {
+padding: 25px;
+}
+
+mat-card-title {
+font-size: 24px;
+font-weight: 500;
+margin-bottom: 10px;
+}
+
+mat-form-field {
+width: 100%;
+}
+
+input {
+font-size: 16px;
+}
+
+/* Caixa do campo Nome */
+mat-form-field.full-width {
+margin-top: 10px;
+}
+
+/* Texto digitado */
+mat-form-field input {
+padding: 8px 0;
+}
+
+/* Placeholder */
+mat-form-field input::placeholder {
+font-size: 14px;
+opacity: 0.65;
+}
