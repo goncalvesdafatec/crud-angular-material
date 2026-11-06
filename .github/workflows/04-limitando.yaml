@@ -1,7 +1,7 @@
 name: Limitando branches
 on:
   push:
-    branches: [main develop]
+    branches: [main, develop]
 
 jobs: 
   CI-CD:
