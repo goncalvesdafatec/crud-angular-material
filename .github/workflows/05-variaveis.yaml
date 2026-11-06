@@ -32,4 +32,5 @@ jobs:
 
       - nome: senha do usuário
         run: echo "a senha do usuário é ${{secrets.PASSWORD}}"
+      - nome:
         
