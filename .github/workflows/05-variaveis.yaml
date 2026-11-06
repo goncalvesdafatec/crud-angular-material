@@ -6,22 +6,23 @@
 # job.status
 
 name: variaveis de ação do github
-run-name: ${{github.actor}} testando variaveis do github action
+run-name: ${{ github.actor }} testando variaveis do github action
 
 on: push
-jobs:
-  Explorando-gitgub-actions:
-  runs-on: ubuntu - latest
-  steps:
-    - run: echo "o job desparou ${{gitgub.event_name}}"
-    - run: echo "o job desparou ${{runer.os}}"
-    - run: echo "o job desparou ${{gitgub.ref}}"
-    - run: echo "o job desparou ${{gitgub.repository}}"
 
-    - name: checkout do repository do codigo
-      uses: actions/checkout@v04
-    - run: echo repository ${{gitgub.repository}}
-    - name: Listar os arquivos do repositório
-      run: |
-        ls ${{gitgub.workspace}}
-        echo o status do job é ${{job.status}}
+jobs:
+  Explorando-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "o job disparou ${{ github.event_name }}"
+      - run: echo "o job disparou ${{ runner.os }}"
+      - run: echo "o job disparou ${{ github.ref }}"
+      - run: echo "o job disparou ${{ github.repository }}"
+
+      - name: checkout do repository do codigo
+        uses: actions/checkout@v4
+      - run: echo repository ${{ github.repository }}
+      - name: Listar os arquivos do repositório
+        run: |
+          ls ${{ github.workspace }}
+          echo o status do job é ${{ job.status }}
