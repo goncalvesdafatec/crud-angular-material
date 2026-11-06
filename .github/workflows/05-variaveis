@@ -1,0 +1,27 @@
+# SINTAXE DE VARIAVEIS
+# ${{VARIAVEIS}}
+# github.actor gitgub.event_name, github.ref
+# github. repository, github.workspace
+# runer.os
+# job.status
+
+name: variaveis de ação do github
+run-name: ${{github.actor}} testando variaveis do github action
+
+on: push
+jobs:
+  Explorando-gitgub-actions:
+  runs-on: ubuntu - latest
+  steps:
+    - run: echo "o job desparou ${{gitgub.event_name}}"
+    - run: echo "o job desparou ${{runer.os}}"
+    - run: echo "o job desparou ${{gitgub.ref}}"
+    - run: echo "o job desparou ${{gitgub.repository}}"
+
+    - name: checkout do repository do codigo
+      uses: actions/checkout@v04
+    - run: echo repository ${{gitgub.repository}}
+    - name: Listar os arquivos do repositório
+      run: |
+        ls ${{gitgub.workspace}}
+        echo o status do job é ${{job.status}}
