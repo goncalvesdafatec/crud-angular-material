@@ -1,0 +1,11 @@
+name: Limitando branches
+on:
+  push:
+    branches: [main develop]
+
+jobs: 
+  CI-CD:
+    name: Teste
+    runs-on: ubuntu - latest
+    steps:
+    - run: echo "ola fatec!"
